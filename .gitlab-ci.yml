@@ -1,0 +1,17 @@
+stages:
+  - validate
+  - lint
+
+validate:ansible:
+  stage: validate
+  image: willhallonline/ansible:latest
+  script:
+    - ansible-playbook ansible/playbooks/deploy.yml --syntax-check
+
+lint:ansible:
+  stage: lint
+  image: willhallonline/ansible:latest
+  script:
+    - ansible-lint ansible/playbooks/deploy.yml
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
