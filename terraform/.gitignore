@@ -1,0 +1,22 @@
+# Terraform
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+
+# AWS credentials
+.aws/
+credentials
+*.csv
+
+# Clés SSH
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# Divers
+.env
+*.log
